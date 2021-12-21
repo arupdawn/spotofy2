@@ -42,7 +42,8 @@ function Center() {
   return (
     <div className="flex-grow h-screen overflow-y-scroll">
       <header className="absolute top-5 right-8">
-        <div className="flex items-center bg-black space-x-3 opacity-90 hover:opacity-80 cursor-pointer rounded-full p-1 pr-2 text-white">
+        <div className="flex items-center bg-black space-x-3 opacity-90 hover:opacity-80 cursor-pointer rounded-full 
+        songImage p-1 pr-2 text-white">
           <img
             className="rounded-full w-10 h-10"
             src={session?.user?.image}
@@ -51,6 +52,9 @@ function Center() {
           <h2>{session?.user?.name}</h2>
           <ChevronDownIcon className="h-5 w-5" />
         </div>
+        {/* <div className="border-none hover:opacity-80 absolute top-14 right-2 text-white p-10 pt-2 pb-2 rounded-xl logoutButton">
+          Logout
+        </div> */}
       </header>
       <section
         className={`flex items-end space-x-7 bg-gradient-to-b to-black ${color} h-80 text-white p-8`}

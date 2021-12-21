@@ -63,10 +63,6 @@ function Player() {
       spotifyApi.setVolume(volume);
     }, 300),
     []
-    //   () => {
-    //       callback
-    //   },
-    //   [],
   );
   useEffect(() => {
     if (spotifyApi.getAccessToken() && !currentTrackId) {
@@ -81,7 +77,7 @@ function Player() {
       {/* Left */}
       <div className="flex items-center space-x-4">
         <img
-          className="hidden md:inline h-12 w-12 rounded-md"
+          className="hidden md:inline h-12 w-12"
           src={songInfo?.album?.images?.[0]?.url}
           alt=""
         />
