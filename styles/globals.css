@@ -17,3 +17,9 @@
     background: linear-gradient(225deg, #252525d3, #2c2c2cc7);
     box-shadow:  -2px 3px 12px #222222;
 }
+.spotify-green{
+  color: #1DB954;
+}
+.create-playlist{
+  color: #94c2b7;
+}
