@@ -52,8 +52,8 @@ function Center() {
             src={session?.user?.image}
             alt=""
           />
-          <h2>{session?.user?.name}</h2>
-          <ChevronDownIcon className="h-5 w-5" />
+          <h2 className="hidden sm:inline">{session?.user?.name}</h2>
+          <ChevronDownIcon className="h-5 w-5 hidden sm:inline" />
         </div>
         {/* <div className="border-none hover:opacity-80 absolute top-14 right-2 text-white p-10 pt-2 pb-2 rounded-xl logoutButton">
           Logout

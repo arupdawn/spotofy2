@@ -6,20 +6,36 @@
   .button {
     @apply h-6 w-6 cursor-pointer hover:scale-125 transition transform duration-100 ease-out;
   }
+  .gridCols {
+    @apply grid-cols-2;
+  }
 }
 .songImage {
-    border-radius: 25px;
-    background: linear-gradient(225deg, #252525, #2c2c2c);
-    box-shadow:  -2px 3px 12px #222222;
+  border-radius: 25px;
+  background: linear-gradient(225deg, #252525, #2c2c2c);
+  box-shadow: -2px 3px 12px #222222;
 }
 .logoutButton {
-    border-radius: 5px;
-    background: linear-gradient(225deg, #252525d3, #2c2c2cc7);
-    box-shadow:  -2px 3px 12px #222222;
+  border-radius: 5px;
+  background: linear-gradient(225deg, #252525d3, #2c2c2cc7);
+  box-shadow: -2px 3px 12px #222222;
 }
-.spotify-green{
-  color: #1DB954;
+.spotify-green {
+  color: #1db954;
 }
-.create-playlist{
+.create-playlist {
   color: #94c2b7;
+}
+
+@media screen and (max-width: 600px) {
+  .hideSmallScreen {
+    display: none;
+  }
+  .gridCols {
+    @apply grid-cols-1;
+  }
+  .bottomPlayer {
+    justify-content: space-between;
+    display: flex;
+  }
 }

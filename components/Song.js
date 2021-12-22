@@ -18,7 +18,7 @@ function Song({ order, track }) {
   };
   return (
     <div
-      className="grid grid-cols-2 hover:bg-gray-800 p-2 pr-6 pl-6 rounded-md cursor-pointer"
+      className="grid gridCols hover:bg-gray-800 p-2 pr-6 pl-6 rounded-md cursor-pointer"
       onClick={playSong}
     >
       <div className="flex items-center space-x-4">
@@ -35,7 +35,7 @@ function Song({ order, track }) {
       </div>
       <div className="flex items-center justify-between ml-auto md:ml-0">
         <p className="hidden md:inline truncate">{track?.track?.album?.name}</p>
-        <p>{millisToMinutesAndSeconds(track?.track?.duration_ms)}</p>
+        <p className="hidden sm:inline ">{millisToMinutesAndSeconds(track?.track?.duration_ms)}</p>
       </div>
     </div>
   );
