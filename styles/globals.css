@@ -26,7 +26,9 @@
 .create-playlist {
   color: #94c2b7;
 }
-
+.widthPlayer{
+  width: 100%;
+}
 @media screen and (max-width: 600px) {
   .hideSmallScreen {
     display: none;

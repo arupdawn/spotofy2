@@ -1,6 +1,7 @@
 import { useRecoilState } from "recoil";
 import { currentTrackIdState, isPlayingState } from "../atoms/songAtom";
 import useSpotify from "../hooks/useSpotify";
+import isSmallDevice from "../lib/isSmallDevice";
 import { millisToMinutesAndSeconds } from "../lib/spotify";
 
 function Song({ order, track }) {
@@ -22,7 +23,7 @@ function Song({ order, track }) {
       onClick={playSong}
     >
       <div className="flex items-center space-x-4">
-        <p className="">{order + 1}</p>
+        {isSmallDevice() && <p className="">{order + 1}</p>}
         <img
           className="h-10 w-10"
           src={track?.track?.album?.images?.[0]?.url}
@@ -32,10 +33,11 @@ function Song({ order, track }) {
           <p className="font-semibold">{track?.track?.name}</p>
           <p className="text-slate-400">{track?.track?.artists?.[0].name}</p>
         </div>
+        {/* {!isSmallDevice() && <div className="">:</div>} */}
       </div>
       <div className="flex items-center justify-between ml-auto md:ml-0">
         <p className="hidden md:inline truncate">{track?.track?.album?.name}</p>
-        <p className="hidden sm:inline ">{millisToMinutesAndSeconds(track?.track?.duration_ms)}</p>
+        <p className="hidden sm:inline">{millisToMinutesAndSeconds(track?.track?.duration_ms)}</p>
       </div>
     </div>
   );
