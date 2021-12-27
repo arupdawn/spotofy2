@@ -29,6 +29,16 @@
 .widthPlayer{
   width: 100%;
 }
+.playerBgColor{
+  /* background-color: rgba(0, 0, 0, 0.87); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.98),rgba(38, 61, 1, 0.98));
+}
+.overflow-y-scroll::-webkit-scrollbar {
+  width: 0px;               /* width of the entire scrollbar */
+}
+.playerDemoBgColor{
+  background-color: rgba(0, 0, 0, 0.87);
+}
 @media screen and (max-width: 600px) {
   .hideSmallScreen {
     display: none;

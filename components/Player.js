@@ -86,8 +86,8 @@ function Player() {
   }, [isVolumeVisibile])
 
   return (
-    <div className="h-24 bg-gradient-to-b from-black to-gray-800 text-white grid grid-cols-3 text-xs md:text-base px-2 md:px-8 border-t-[0.5px] border-gray-800 bottomPlayer">
-      {/* Left */}
+    <div className="h-20 playerBgColor text-white grid grid-cols-3 text-base px-2 md:px-8 border-t-[0.5px] border-gray-800 bottomPlayer">
+      {/* Left bg-gradient-to-b from-black to-gray-800 */}
       <div className="flex items-center space-x-4">
         <img
           className="h-12 w-12"
