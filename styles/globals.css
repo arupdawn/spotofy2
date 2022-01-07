@@ -33,11 +33,28 @@
   /* background-color: rgba(0, 0, 0, 0.87); */
   background-image: linear-gradient(rgba(0, 0, 0, 0.98),rgba(38, 61, 1, 0.98));
 }
+
+.playerBgColorMobile{
+  /* background-image: linear-gradient(rgb(59, 87, 14),rgb(60, 94, 5)); */
+  background-color: #1c3b28;
+  border-radius: 8px;
+  z-index: 44;
+}
+
+.overflow-y-scroll{
+  scroll-behavior: smooth;
+}
 .overflow-y-scroll::-webkit-scrollbar {
   width: 0px;               /* width of the entire scrollbar */
 }
+
 .playerDemoBgColor{
   background-color: rgba(0, 0, 0, 0.87);
+}
+
+.bottomSectionStyle{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.705),rgba(0, 0, 0, 0.98));
+  height: 57px;
 }
 @media screen and (max-width: 600px) {
   .hideSmallScreen {

@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { playlistIdState } from "../atoms/playlistAtom";
 import useSpotify from "../hooks/useSpotify";
+import truncateText from "../lib/truncateText";
 
 function Sidebar() {
   const spotifyApi = useSpotify();
@@ -83,14 +84,16 @@ function Sidebar() {
         {playlists.map((playlist) => (
           <p
             key={playlist?.id}
-            className="cursor-pointer hover:text-white font-bold"
+            className="cursor-pointer hover:text-white"
             onClick={() => {
               setPlaylistId(playlist?.id);
             }}
           >
+            {/* {truncateText(playlist?.name)} */}
             {playlist?.name}
           </p>
         ))}
+        <br/><br/><br/>
       </div>
     </div>
   );

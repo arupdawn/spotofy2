@@ -1,14 +1,16 @@
+import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { currentTrackIdState, isPlayingState } from "../atoms/songAtom";
 import useSpotify from "../hooks/useSpotify";
 import isSmallDevice from "../lib/isSmallDevice";
 import { millisToMinutesAndSeconds } from "../lib/spotify";
 
-function Song({ order, track }) {
+function Song({ order, track, isMobiledevice }) {
   const spotifyApi = useSpotify();
   const [currentTrackId, setCurrentTrackId] =
     useRecoilState(currentTrackIdState);
   const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
+  const [trackName, settrackName] = useState(track?.track?.name);
 
   const playSong = () => {
     setCurrentTrackId(track?.track?.id);
@@ -17,6 +19,18 @@ function Song({ order, track }) {
       uris: [track.track.uri],
     });
   };
+
+  useEffect(() => {
+    let updatedName = trackName;
+    let newName = trackName;
+    if(trackName.length > 35 && !isMobiledevice){
+     updatedName = updatedName.split("").slice(0,34).join('');
+     newName = updatedName + "...";
+     settrackName(newName);
+    }else{
+      settrackName(track?.track?.name);
+    }
+  }, [])
   return (
     <div
       className="grid gridCols hover:bg-gray-800 p-2 pr-6 pl-6 rounded-md cursor-pointer"
@@ -30,7 +44,7 @@ function Song({ order, track }) {
           alt=""
         />
         <div>
-          <p className="font-semibold">{track?.track?.name}</p>
+          <p className="font-semibold">{trackName}</p>
           <p className="text-slate-400">{track?.track?.artists?.[0].name}</p>
         </div>
         {/* {!isSmallDevice() && <div className="">:</div>} */}

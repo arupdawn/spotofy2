@@ -18,7 +18,7 @@ const colors = [
   "from-purple-500",
 ];
 
-function Center() {
+function Center({isMobiledevice}) {
   const { data: session } = useSession();
   const spotifyApi = useSpotify();
   const [color, setColor] = useState(null);
@@ -75,9 +75,8 @@ function Center() {
           </h1>
         </div>
       </section>
-
       <div>
-        <Songs />
+        <Songs isMobiledevice={isMobiledevice}/>
       </div>
     </div>
   );
